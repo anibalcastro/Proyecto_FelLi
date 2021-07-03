@@ -31,126 +31,134 @@ namespace Presentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnJugar = new System.Windows.Forms.Button();
+            this.btnComoJugar = new System.Windows.Forms.Button();
+            this.pbSalir = new System.Windows.Forms.PictureBox();
+            this.pbComoJugar = new System.Windows.Forms.PictureBox();
+            this.pbJugar = new System.Windows.Forms.PictureBox();
+            this.pbReportes = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtJugador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComoJugar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJugar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReportes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Controls.Add(this.btnReportes);
+            this.panel1.Controls.Add(this.btnJugar);
+            this.panel1.Controls.Add(this.btnComoJugar);
+            this.panel1.Controls.Add(this.pbSalir);
+            this.panel1.Controls.Add(this.pbComoJugar);
+            this.panel1.Controls.Add(this.pbJugar);
+            this.panel1.Controls.Add(this.pbReportes);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 454);
             this.panel1.TabIndex = 0;
             // 
-            // button4
+            // btnSalir
             // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(74, 352);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(147, 32);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Salir";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSalir.BackColor = System.Drawing.Color.Black;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(74, 352);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(147, 32);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button3
+            // btnReportes
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(74, 290);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Reportes";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnReportes.BackColor = System.Drawing.Color.Black;
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Location = new System.Drawing.Point(74, 290);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(147, 32);
+            this.btnReportes.TabIndex = 8;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // button2
+            // btnJugar
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(74, 226);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Jugar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnJugar.BackColor = System.Drawing.Color.Black;
+            this.btnJugar.ForeColor = System.Drawing.Color.White;
+            this.btnJugar.Location = new System.Drawing.Point(74, 226);
+            this.btnJugar.Name = "btnJugar";
+            this.btnJugar.Size = new System.Drawing.Size(147, 32);
+            this.btnJugar.TabIndex = 7;
+            this.btnJugar.Text = "Jugar";
+            this.btnJugar.UseVisualStyleBackColor = false;
+            this.btnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
-            // button1
+            // btnComoJugar
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(74, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "¿Cómo Jugar?";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnComoJugar.BackColor = System.Drawing.Color.Black;
+            this.btnComoJugar.ForeColor = System.Drawing.Color.White;
+            this.btnComoJugar.Location = new System.Drawing.Point(74, 166);
+            this.btnComoJugar.Name = "btnComoJugar";
+            this.btnComoJugar.Size = new System.Drawing.Size(147, 32);
+            this.btnComoJugar.TabIndex = 6;
+            this.btnComoJugar.Text = "¿Cómo Jugar?";
+            this.btnComoJugar.UseVisualStyleBackColor = false;
+            this.btnComoJugar.Click += new System.EventHandler(this.btnComoJugar_Click);
             // 
-            // pictureBox4
+            // pbSalir
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(36, 352);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
+            this.pbSalir.Location = new System.Drawing.Point(36, 352);
+            this.pbSalir.Name = "pbSalir";
+            this.pbSalir.Size = new System.Drawing.Size(32, 32);
+            this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbSalir.TabIndex = 5;
+            this.pbSalir.TabStop = false;
+            this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
             // 
-            // pictureBox3
+            // pbComoJugar
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(36, 166);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.pbComoJugar.Image = ((System.Drawing.Image)(resources.GetObject("pbComoJugar.Image")));
+            this.pbComoJugar.Location = new System.Drawing.Point(36, 166);
+            this.pbComoJugar.Name = "pbComoJugar";
+            this.pbComoJugar.Size = new System.Drawing.Size(32, 32);
+            this.pbComoJugar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbComoJugar.TabIndex = 4;
+            this.pbComoJugar.TabStop = false;
+            this.pbComoJugar.Click += new System.EventHandler(this.pbComoJugar_Click);
             // 
-            // pictureBox2
+            // pbJugar
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(36, 226);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.pbJugar.Image = ((System.Drawing.Image)(resources.GetObject("pbJugar.Image")));
+            this.pbJugar.Location = new System.Drawing.Point(36, 226);
+            this.pbJugar.Name = "pbJugar";
+            this.pbJugar.Size = new System.Drawing.Size(32, 32);
+            this.pbJugar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbJugar.TabIndex = 3;
+            this.pbJugar.TabStop = false;
+            this.pbJugar.Click += new System.EventHandler(this.pbJugar_Click);
             // 
-            // pictureBox1
+            // pbReportes
             // 
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 290);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbReportes.Enabled = false;
+            this.pbReportes.Image = ((System.Drawing.Image)(resources.GetObject("pbReportes.Image")));
+            this.pbReportes.Location = new System.Drawing.Point(36, 290);
+            this.pbReportes.Name = "pbReportes";
+            this.pbReportes.Size = new System.Drawing.Size(32, 32);
+            this.pbReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbReportes.TabIndex = 1;
+            this.pbReportes.TabStop = false;
+            this.pbReportes.Click += new System.EventHandler(this.pbReportes_Click);
             // 
             // groupBox1
             // 
@@ -168,6 +176,7 @@ namespace Presentacion
             this.txtJugador.Name = "txtJugador";
             this.txtJugador.Size = new System.Drawing.Size(188, 20);
             this.txtJugador.TabIndex = 1;
+            this.txtJugador.Validating += new System.ComponentModel.CancelEventHandler(this.txtJugador_Validating);
             // 
             // label1
             // 
@@ -189,10 +198,10 @@ namespace Presentacion
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComoJugar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJugar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReportes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -203,16 +212,16 @@ namespace Presentacion
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbReportes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtJugador;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pbSalir;
+        private System.Windows.Forms.PictureBox pbComoJugar;
+        private System.Windows.Forms.PictureBox pbJugar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnJugar;
+        private System.Windows.Forms.Button btnComoJugar;
         private System.Windows.Forms.Label label1;
     }
 }

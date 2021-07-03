@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Objetos
 {
-    public class Class1
+    public class ObjUsuarios
     {
+        public int id { set; get; }
+        public string nombre_jugador { set; get; }
     }
 }

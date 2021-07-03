@@ -98,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
@@ -124,6 +125,15 @@
       <Project>{950c47a3-f9ef-43b0-aba7-e52f82be2dd9}</Project>
       <Name>Objetos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vacio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\juego.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ficha-de-poker.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
