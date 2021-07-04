@@ -120,12 +120,25 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAOwAAADsAXkocb0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAAA1klEQVRYR+2UMQrCQBBFV9DWUsS76Bm8nIjXMJ2ViEcQ8TCK/h8zzTKbjbizhc6DV6TIvEGZBMf5
-        F1ZwDSftU0VGcAufnWc4hVVgfAclLu6hOak4vcMxNKMvTo/QDMY3UAvTG1xAE34nzlvlzS7bpzy5//wK
-        53AQvFHeqrzMG2YgRdE4aWA8hAFtieJx/vQPqA2LlygeF05QG0hlCbM44YscoA2mDJvFhRm8QC3QZ9E7
-        /3QJk4/M0CVMv3C5JUzjQmqJKnEhXqJqXOB5HTq/PjXHcd6E8AIymLARaW7OpAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADWSURBVFhH7ZQx
+        CsJAEEVX0NZSxLvoGbyciNcwnZWIRxDxMIr+HzPNMpuNuLOFzoNXpMi8QZkEx/kXVnANJ+1TRUZwC5+d
+        ZziFVWB8ByUu7qE5qTi9wzE0oy9Oj9AMxjdQC9MbXEATfifOW+XNLtunPLn//ArncBC8Ud6qvMwbZiBF
+        0ThpYDyEAW2J4nH+9A+oDYuXKB4XTlAbSGUJszjhixygDaYMm8WFGbxALdBn0Tv/dAmTj8zQJUy/cLkl
+        TONCaokqcSFeompc4HkdOr8+Ncdx3oTwAjKYsBFpbs6kAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>COMO JUGAR:
+
+° Las piezas solo se pueden mover hacia adelante.
+
+° Se puede hacer un único moviemiento a la vez de cada pieza 
+de manera adyacente.
+
+° Se puede saltar una única vez. cada pieza, siempre y cuando sea 
+de diferente color,
+
+°  El usuario no puede mover piezas hacia atrás.</value>
   </data>
 </root>

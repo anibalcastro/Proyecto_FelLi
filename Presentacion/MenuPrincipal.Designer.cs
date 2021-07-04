@@ -30,6 +30,13 @@ namespace Presentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -42,12 +49,18 @@ namespace Presentacion
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtJugador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Pastel = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Mejores3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.jugadas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbComoJugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReportes)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pastel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mejores3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jugadas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,7 +77,7 @@ namespace Presentacion
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 454);
+            this.panel1.Size = new System.Drawing.Size(260, 501);
             this.panel1.TabIndex = 0;
             // 
             // btnSalir
@@ -176,26 +189,74 @@ namespace Presentacion
             this.txtJugador.Name = "txtJugador";
             this.txtJugador.Size = new System.Drawing.Size(188, 20);
             this.txtJugador.TabIndex = 1;
-            this.txtJugador.Validating += new System.ComponentModel.CancelEventHandler(this.txtJugador_Validating);
+            
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(542, 29);
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(527, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(110, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Estadisticas";
+            // 
+            // Pastel
+            // 
+            this.Pastel.BorderlineColor = System.Drawing.SystemColors.Control;
+            chartArea1.Name = "ChartArea1";
+            this.Pastel.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Pastel.Legends.Add(legend1);
+            this.Pastel.Location = new System.Drawing.Point(269, 51);
+            this.Pastel.Name = "Pastel";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Pastel.Series.Add(series1);
+            this.Pastel.Size = new System.Drawing.Size(292, 179);
+            this.Pastel.TabIndex = 2;
+            this.Pastel.Text = "chart1";
+            // 
+            // Mejores3
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.Mejores3.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Mejores3.Legends.Add(legend2);
+            this.Mejores3.Location = new System.Drawing.Point(567, 51);
+            this.Mejores3.Name = "Mejores3";
+            this.Mejores3.Size = new System.Drawing.Size(369, 179);
+            this.Mejores3.TabIndex = 3;
+            this.Mejores3.Text = "chart2";
+            // 
+            // jugadas
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.jugadas.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.jugadas.Legends.Add(legend3);
+            this.jugadas.Location = new System.Drawing.Point(367, 252);
+            this.jugadas.Name = "jugadas";
+            this.jugadas.Size = new System.Drawing.Size(482, 219);
+            this.jugadas.TabIndex = 4;
+            this.jugadas.Text = "chart1";
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(963, 499);
+            this.Controls.Add(this.jugadas);
+            this.Controls.Add(this.Mejores3);
+            this.Controls.Add(this.Pastel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "MenuPrincipal";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
@@ -204,6 +265,9 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.pbReportes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pastel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mejores3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jugadas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +287,8 @@ namespace Presentacion
         private System.Windows.Forms.Button btnJugar;
         private System.Windows.Forms.Button btnComoJugar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Pastel;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Mejores3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart jugadas;
     }
 }

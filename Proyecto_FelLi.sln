@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{618A766C-48F5-489E-B42B-F598B5160927}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8B3F20F-2E7E-4BC7-941D-307A75CE13EE} = {E8B3F20F-2E7E-4BC7-941D-307A75CE13EE}
+		{6B837F4A-C3F3-4E7B-A818-2ACE12DF02FD} = {6B837F4A-C3F3-4E7B-A818-2ACE12DF02FD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imagenes", "Imagenes\Imagenes.csproj", "{6B837F4A-C3F3-4E7B-A818-2ACE12DF02FD}"
 EndProject

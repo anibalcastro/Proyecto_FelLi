@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ObjAdyacente.cs" />
+    <Compile Include="ObjFelLi.cs" />
+    <Compile Include="ObjGraficoPastel.cs" />
     <Compile Include="ObjRep1.cs" />
     <Compile Include="ObjRep2_3.cs" />
     <Compile Include="ObjSaltos.cs" />

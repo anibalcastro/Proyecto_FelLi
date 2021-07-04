@@ -32,14 +32,24 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fel_Li));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnReiniciar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtSaltos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAdyacente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtJugador = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.A_6 = new System.Windows.Forms.PictureBox();
+            this.A_7 = new System.Windows.Forms.PictureBox();
+            this.A_8 = new System.Windows.Forms.PictureBox();
+            this.A_1 = new System.Windows.Forms.PictureBox();
+            this.A_2 = new System.Windows.Forms.PictureBox();
+            this.A_3 = new System.Windows.Forms.PictureBox();
+            this.A_5 = new System.Windows.Forms.PictureBox();
+            this.A_4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.B_8 = new System.Windows.Forms.PictureBox();
             this.B_2 = new System.Windows.Forms.PictureBox();
@@ -49,20 +59,20 @@ namespace Presentacion
             this.B_3 = new System.Windows.Forms.PictureBox();
             this.B_5 = new System.Windows.Forms.PictureBox();
             this.B_4 = new System.Windows.Forms.PictureBox();
-            this.A_6 = new System.Windows.Forms.PictureBox();
-            this.A_7 = new System.Windows.Forms.PictureBox();
-            this.A_8 = new System.Windows.Forms.PictureBox();
-            this.A_1 = new System.Windows.Forms.PictureBox();
-            this.A_2 = new System.Windows.Forms.PictureBox();
-            this.A_3 = new System.Windows.Forms.PictureBox();
-            this.A_5 = new System.Windows.Forms.PictureBox();
-            this.A_4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.m_0 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.A_6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B_8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_2)).BeginInit();
@@ -72,16 +82,6 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.B_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_0)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +90,11 @@ namespace Presentacion
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnReiniciar);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtSaltos);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtAdyacente);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(2, 0);
@@ -114,23 +114,46 @@ namespace Presentacion
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // pictureBox2
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(68, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Reiniciar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(30, 426);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // textBox2
+            // btnReiniciar
             // 
-            this.textBox2.Location = new System.Drawing.Point(30, 267);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 4;
+            this.btnReiniciar.BackColor = System.Drawing.Color.Black;
+            this.btnReiniciar.ForeColor = System.Drawing.Color.White;
+            this.btnReiniciar.Location = new System.Drawing.Point(68, 376);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(147, 32);
+            this.btnReiniciar.TabIndex = 6;
+            this.btnReiniciar.Text = "Reiniciar";
+            this.btnReiniciar.UseVisualStyleBackColor = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(30, 376);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtSaltos
+            // 
+            this.txtSaltos.Enabled = false;
+            this.txtSaltos.Location = new System.Drawing.Point(30, 267);
+            this.txtSaltos.Name = "txtSaltos";
+            this.txtSaltos.Size = new System.Drawing.Size(175, 20);
+            this.txtSaltos.TabIndex = 4;
             // 
             // label2
             // 
@@ -141,12 +164,13 @@ namespace Presentacion
             this.label2.TabIndex = 3;
             this.label2.Text = "Movimientos con salto";
             // 
-            // textBox1
+            // txtAdyacente
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtAdyacente.Enabled = false;
+            this.txtAdyacente.Location = new System.Drawing.Point(30, 178);
+            this.txtAdyacente.Name = "txtAdyacente";
+            this.txtAdyacente.Size = new System.Drawing.Size(175, 20);
+            this.txtAdyacente.TabIndex = 2;
             // 
             // label1
             // 
@@ -190,6 +214,86 @@ namespace Presentacion
             this.panel2.Size = new System.Drawing.Size(428, 490);
             this.panel2.TabIndex = 1;
             // 
+            // A_6
+            // 
+            this.A_6.Location = new System.Drawing.Point(108, 149);
+            this.A_6.Name = "A_6";
+            this.A_6.Size = new System.Drawing.Size(61, 55);
+            this.A_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_6.TabIndex = 13;
+            this.A_6.TabStop = false;
+            this.A_6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_7
+            // 
+            this.A_7.Location = new System.Drawing.Point(108, 287);
+            this.A_7.Name = "A_7";
+            this.A_7.Size = new System.Drawing.Size(61, 55);
+            this.A_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_7.TabIndex = 7;
+            this.A_7.TabStop = false;
+            this.A_7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_8
+            // 
+            this.A_8.Location = new System.Drawing.Point(21, 219);
+            this.A_8.Name = "A_8";
+            this.A_8.Size = new System.Drawing.Size(61, 55);
+            this.A_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_8.TabIndex = 12;
+            this.A_8.TabStop = false;
+            this.A_8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_1
+            // 
+            this.A_1.Location = new System.Drawing.Point(330, 149);
+            this.A_1.Name = "A_1";
+            this.A_1.Size = new System.Drawing.Size(61, 55);
+            this.A_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_1.TabIndex = 11;
+            this.A_1.TabStop = false;
+            this.A_1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_2
+            // 
+            this.A_2.Location = new System.Drawing.Point(330, 287);
+            this.A_2.Name = "A_2";
+            this.A_2.Size = new System.Drawing.Size(61, 55);
+            this.A_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_2.TabIndex = 10;
+            this.A_2.TabStop = false;
+            this.A_2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_3
+            // 
+            this.A_3.Location = new System.Drawing.Point(219, 82);
+            this.A_3.Name = "A_3";
+            this.A_3.Size = new System.Drawing.Size(61, 55);
+            this.A_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_3.TabIndex = 7;
+            this.A_3.TabStop = false;
+            this.A_3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_5
+            // 
+            this.A_5.Location = new System.Drawing.Point(219, 353);
+            this.A_5.Name = "A_5";
+            this.A_5.Size = new System.Drawing.Size(61, 55);
+            this.A_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_5.TabIndex = 8;
+            this.A_5.TabStop = false;
+            this.A_5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
+            // A_4
+            // 
+            this.A_4.Location = new System.Drawing.Point(219, 219);
+            this.A_4.Name = "A_4";
+            this.A_4.Size = new System.Drawing.Size(61, 55);
+            this.A_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.A_4.TabIndex = 9;
+            this.A_4.TabStop = false;
+            this.A_4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.B_8);
@@ -200,7 +304,7 @@ namespace Presentacion
             this.panel3.Controls.Add(this.B_3);
             this.panel3.Controls.Add(this.B_5);
             this.panel3.Controls.Add(this.B_4);
-            this.panel3.Location = new System.Drawing.Point(745, 13);
+            this.panel3.Location = new System.Drawing.Point(758, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(434, 489);
             this.panel3.TabIndex = 14;
@@ -213,15 +317,17 @@ namespace Presentacion
             this.B_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_8.TabIndex = 15;
             this.B_8.TabStop = false;
+            this.B_8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_2
             // 
             this.B_2.Location = new System.Drawing.Point(27, 148);
             this.B_2.Name = "B_2";
-            this.B_2.Size = new System.Drawing.Size(64, 64);
+            this.B_2.Size = new System.Drawing.Size(61, 55);
             this.B_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_2.TabIndex = 13;
             this.B_2.TabStop = false;
+            this.B_2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_1
             // 
@@ -231,6 +337,7 @@ namespace Presentacion
             this.B_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_1.TabIndex = 7;
             this.B_1.TabStop = false;
+            this.B_1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_6
             // 
@@ -240,6 +347,7 @@ namespace Presentacion
             this.B_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_6.TabIndex = 11;
             this.B_6.TabStop = false;
+            this.B_6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_7
             // 
@@ -249,6 +357,7 @@ namespace Presentacion
             this.B_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_7.TabIndex = 10;
             this.B_7.TabStop = false;
+            this.B_7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_3
             // 
@@ -258,6 +367,7 @@ namespace Presentacion
             this.B_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_3.TabIndex = 7;
             this.B_3.TabStop = false;
+            this.B_3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_5
             // 
@@ -267,6 +377,7 @@ namespace Presentacion
             this.B_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_5.TabIndex = 8;
             this.B_5.TabStop = false;
+            this.B_5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // B_4
             // 
@@ -276,114 +387,23 @@ namespace Presentacion
             this.B_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.B_4.TabIndex = 9;
             this.B_4.TabStop = false;
-            // 
-            // A_6
-            // 
-            this.A_6.Location = new System.Drawing.Point(108, 149);
-            this.A_6.Name = "A_6";
-            this.A_6.Size = new System.Drawing.Size(61, 55);
-            this.A_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_6.TabIndex = 13;
-            this.A_6.TabStop = false;
-            // 
-            // A_7
-            // 
-            this.A_7.Location = new System.Drawing.Point(108, 287);
-            this.A_7.Name = "A_7";
-            this.A_7.Size = new System.Drawing.Size(61, 55);
-            this.A_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_7.TabIndex = 7;
-            this.A_7.TabStop = false;
-            // 
-            // A_8
-            // 
-            this.A_8.Location = new System.Drawing.Point(21, 219);
-            this.A_8.Name = "A_8";
-            this.A_8.Size = new System.Drawing.Size(61, 55);
-            this.A_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_8.TabIndex = 12;
-            this.A_8.TabStop = false;
-            // 
-            // A_1
-            // 
-            this.A_1.Location = new System.Drawing.Point(330, 149);
-            this.A_1.Name = "A_1";
-            this.A_1.Size = new System.Drawing.Size(64, 64);
-            this.A_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_1.TabIndex = 11;
-            this.A_1.TabStop = false;
-            // 
-            // A_2
-            // 
-            this.A_2.Location = new System.Drawing.Point(330, 287);
-            this.A_2.Name = "A_2";
-            this.A_2.Size = new System.Drawing.Size(61, 55);
-            this.A_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_2.TabIndex = 10;
-            this.A_2.TabStop = false;
-            // 
-            // A_3
-            // 
-            this.A_3.Location = new System.Drawing.Point(219, 82);
-            this.A_3.Name = "A_3";
-            this.A_3.Size = new System.Drawing.Size(61, 55);
-            this.A_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_3.TabIndex = 7;
-            this.A_3.TabStop = false;
-            // 
-            // A_5
-            // 
-            this.A_5.Location = new System.Drawing.Point(219, 353);
-            this.A_5.Name = "A_5";
-            this.A_5.Size = new System.Drawing.Size(61, 55);
-            this.A_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_5.TabIndex = 8;
-            this.A_5.TabStop = false;
-            // 
-            // A_4
-            // 
-            this.A_4.Location = new System.Drawing.Point(219, 219);
-            this.A_4.Name = "A_4";
-            this.A_4.Size = new System.Drawing.Size(61, 55);
-            this.A_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.A_4.TabIndex = 9;
-            this.A_4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(30, 426);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 376);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.B_4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // m_0
             // 
-            this.m_0.Location = new System.Drawing.Point(691, 238);
+            this.m_0.Location = new System.Drawing.Point(691, 231);
             this.m_0.Name = "m_0";
-            this.m_0.Size = new System.Drawing.Size(48, 48);
+            this.m_0.Size = new System.Drawing.Size(61, 55);
             this.m_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.m_0.TabIndex = 0;
             this.m_0.TabStop = false;
+            this.m_0.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
             // Fel_Li
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 514);
+            this.ClientSize = new System.Drawing.Size(1208, 514);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -393,10 +413,20 @@ namespace Presentacion
             this.Load += new System.EventHandler(this.Fel_Li_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.A_6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.A_4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B_8)).EndInit();
@@ -407,16 +437,6 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.B_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.A_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_0)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -427,15 +447,15 @@ namespace Presentacion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSaltos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAdyacente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtJugador;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReiniciar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox A_8;
         private System.Windows.Forms.PictureBox A_1;

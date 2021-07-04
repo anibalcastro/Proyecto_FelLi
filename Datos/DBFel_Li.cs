@@ -189,5 +189,154 @@ namespace Datos
             return listSaltos;
         }
 
+        /// <summary>
+        /// Consultar datos para el grafico de pastel
+        /// </summary>
+        /// <returns></returns>
+        public List<int> consultarResulto_Reinicio()
+        {
+            List<int> listaDatos = new List<int>();
+
+            conexion = Conexion.ConexionBD();
+            conexion.Open();
+
+            cmd = new NpgsqlCommand("SELECT COUNT(estado) Cant FROM jugadas " +
+                " GROUP BY estado;", conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    int cant = Convert.ToInt32(dr.GetString(0));
+                    listaDatos.Add(cant);
+                }
+
+            }
+            conexion.Close();
+            return listaDatos;
+
+        }
+
+        public List<string> consultarNombreResueltos()
+        {
+            List<string> listaDatos = new List<string>();
+
+            conexion = Conexion.ConexionBD();
+            conexion.Open();
+
+            cmd = new NpgsqlCommand("SELECT nombre_usuario, COUNT(estado) FROM jugadas " +
+                " WHERE estado = 'Resuelto' " +
+                " GROUP BY nombre_usuario " +
+                " FETCH FIRST 3 ROWS ONLY", conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    string nomnbre = (dr.GetString(0));
+                    listaDatos.Add(nomnbre);
+                }
+
+            }
+            conexion.Close();
+            return listaDatos;
+
+        }
+
+        public List<int> consultarCantResueltos()
+        {
+            List<int> listaDatos = new List<int>();
+
+            conexion = Conexion.ConexionBD();
+            conexion.Open();
+
+            cmd = new NpgsqlCommand("SELECT nombre_usuario, COUNT(estado) FROM jugadas " +
+                " WHERE estado = 'Resuelto' " +
+                " GROUP BY nombre_usuario " +
+                " FETCH FIRST 3 ROWS ONLY", conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    int cant = Convert.ToInt32(dr.GetString(1));
+                    listaDatos.Add(cant);
+                }
+
+            }
+            conexion.Close();
+            return listaDatos;
+
+        }
+
+        public List<string> consultar_id()
+        {
+            List<string> listaDatos = new List<string>();
+
+            conexion = Conexion.ConexionBD();
+            conexion.Open();
+
+            cmd = new NpgsqlCommand(" SELECT id, mov_adyacentes FROM jugadas " +
+                " WHERE estado = 'Resuelto' " +
+                "ORDER BY mov_adyacentes ASC " +
+                " FETCH FIRST 3 ROWS ONLY", conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    string id = "Juego " + Convert.ToInt32(dr.GetString(0));
+                    listaDatos.Add(id);
+                }
+
+            }
+            conexion.Close();
+            return listaDatos;
+        }
+
+        public List<int> consultar_movAdyacente()
+        {
+            List<int> listaDatos = new List<int>();
+
+            conexion = Conexion.ConexionBD();
+            conexion.Open();
+
+            cmd = new NpgsqlCommand(" SELECT id, mov_adyacentes FROM jugadas " +
+                " WHERE estado = 'Resuelto' " +
+                "ORDER BY mov_adyacentes ASC " +
+                " FETCH FIRST 3 ROWS ONLY", conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    int movivimiento_adyacente = Convert.ToInt32(dr.GetString(1));
+                    listaDatos.Add(movivimiento_adyacente);
+                }
+
+            }
+            conexion.Close();
+            return listaDatos;
+        }
+
+
+        public void Insertar(ObjFelLi felLi)
+        {
+            conexion = Conexion.ConexionBD();
+            conexion.Open();
+            cmd = new NpgsqlCommand("INSERT INTO public.jugadas(nombre_usuario, fecha, mov_adyacentes, cant_saltos, estado) " +
+                " VALUES( " +
+                "'" +felLi.nombre_jugador + "',"+
+                "'"+felLi.fecha +"'," +
+                felLi.mov_adyacente + "," +
+                + felLi.cant_saltos +"," +
+                "'"+felLi.estado+"');", conexion);
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+
+
+
     }
 }

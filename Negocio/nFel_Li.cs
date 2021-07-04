@@ -12,6 +12,7 @@ namespace Negocio
     {
         List<ObjSaltos> saltos = new List<ObjSaltos>();
         List<ObjAdyacente> adyacente = new List<ObjAdyacente>();
+        Datos.DBFel_Li fel_Li;
 
         public nFel_Li()
         {
@@ -68,6 +69,11 @@ namespace Negocio
                 }
             }
             return validar;
+        }
+
+        public void insertarDatos(ObjFelLi objFelLi)
+        {
+            new Datos.DBFel_Li().Insertar(objFelLi);
         }
     }
 }
