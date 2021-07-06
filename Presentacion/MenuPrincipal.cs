@@ -17,7 +17,7 @@ namespace Presentacion
     {
         Negocio.nMenuPrincipal logica;
         string nombre_jugador;
-        
+
 
         public MenuPrincipal()
         {
@@ -25,6 +25,10 @@ namespace Presentacion
             logica = new nMenuPrincipal();
         }
 
+        public void nombre(string nombre)
+        {
+            this.txtJugador.Text = nombre;
+        }
         public void graficoPastel()
         {
             String[] serie = { "Resuelto", "Reinicio" };
@@ -172,7 +176,7 @@ namespace Presentacion
             this.graficoPastel();
             this.top3();
             this.juegoResueltoMenos();
-            this.txtJugador.Text = nombre_jugador;
+            
         }
     }
 }

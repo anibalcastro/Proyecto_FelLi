@@ -189,7 +189,7 @@ namespace Presentacion
             this.txtJugador.Name = "txtJugador";
             this.txtJugador.Size = new System.Drawing.Size(188, 20);
             this.txtJugador.TabIndex = 1;
-            
+            this.txtJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -254,7 +254,9 @@ namespace Presentacion
             this.Controls.Add(this.Pastel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panel1.ResumeLayout(false);

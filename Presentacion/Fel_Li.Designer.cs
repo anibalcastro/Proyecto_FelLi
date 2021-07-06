@@ -41,7 +41,7 @@ namespace Presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtJugador = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.fichas_azules = new System.Windows.Forms.Panel();
             this.A_6 = new System.Windows.Forms.PictureBox();
             this.A_7 = new System.Windows.Forms.PictureBox();
             this.A_8 = new System.Windows.Forms.PictureBox();
@@ -50,7 +50,7 @@ namespace Presentacion
             this.A_3 = new System.Windows.Forms.PictureBox();
             this.A_5 = new System.Windows.Forms.PictureBox();
             this.A_4 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.fichas_rojas = new System.Windows.Forms.Panel();
             this.B_8 = new System.Windows.Forms.PictureBox();
             this.B_2 = new System.Windows.Forms.PictureBox();
             this.B_1 = new System.Windows.Forms.PictureBox();
@@ -64,7 +64,7 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.fichas_azules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.A_6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_8)).BeginInit();
@@ -73,7 +73,7 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.A_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_4)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.fichas_rojas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B_8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_1)).BeginInit();
@@ -154,6 +154,7 @@ namespace Presentacion
             this.txtSaltos.Name = "txtSaltos";
             this.txtSaltos.Size = new System.Drawing.Size(175, 20);
             this.txtSaltos.TabIndex = 4;
+            this.txtSaltos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -171,6 +172,7 @@ namespace Presentacion
             this.txtAdyacente.Name = "txtAdyacente";
             this.txtAdyacente.Size = new System.Drawing.Size(175, 20);
             this.txtAdyacente.TabIndex = 2;
+            this.txtAdyacente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -198,21 +200,22 @@ namespace Presentacion
             this.txtJugador.Name = "txtJugador";
             this.txtJugador.Size = new System.Drawing.Size(155, 20);
             this.txtJugador.TabIndex = 0;
+            this.txtJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel2
+            // fichas_azules
             // 
-            this.panel2.Controls.Add(this.A_6);
-            this.panel2.Controls.Add(this.A_7);
-            this.panel2.Controls.Add(this.A_8);
-            this.panel2.Controls.Add(this.A_1);
-            this.panel2.Controls.Add(this.A_2);
-            this.panel2.Controls.Add(this.A_3);
-            this.panel2.Controls.Add(this.A_5);
-            this.panel2.Controls.Add(this.A_4);
-            this.panel2.Location = new System.Drawing.Point(257, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(428, 490);
-            this.panel2.TabIndex = 1;
+            this.fichas_azules.Controls.Add(this.A_6);
+            this.fichas_azules.Controls.Add(this.A_7);
+            this.fichas_azules.Controls.Add(this.A_8);
+            this.fichas_azules.Controls.Add(this.A_1);
+            this.fichas_azules.Controls.Add(this.A_2);
+            this.fichas_azules.Controls.Add(this.A_3);
+            this.fichas_azules.Controls.Add(this.A_5);
+            this.fichas_azules.Controls.Add(this.A_4);
+            this.fichas_azules.Location = new System.Drawing.Point(257, 12);
+            this.fichas_azules.Name = "fichas_azules";
+            this.fichas_azules.Size = new System.Drawing.Size(428, 490);
+            this.fichas_azules.TabIndex = 1;
             // 
             // A_6
             // 
@@ -294,20 +297,20 @@ namespace Presentacion
             this.A_4.TabStop = false;
             this.A_4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ObtenerPB);
             // 
-            // panel3
+            // fichas_rojas
             // 
-            this.panel3.Controls.Add(this.B_8);
-            this.panel3.Controls.Add(this.B_2);
-            this.panel3.Controls.Add(this.B_1);
-            this.panel3.Controls.Add(this.B_6);
-            this.panel3.Controls.Add(this.B_7);
-            this.panel3.Controls.Add(this.B_3);
-            this.panel3.Controls.Add(this.B_5);
-            this.panel3.Controls.Add(this.B_4);
-            this.panel3.Location = new System.Drawing.Point(758, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(434, 489);
-            this.panel3.TabIndex = 14;
+            this.fichas_rojas.Controls.Add(this.B_8);
+            this.fichas_rojas.Controls.Add(this.B_2);
+            this.fichas_rojas.Controls.Add(this.B_1);
+            this.fichas_rojas.Controls.Add(this.B_6);
+            this.fichas_rojas.Controls.Add(this.B_7);
+            this.fichas_rojas.Controls.Add(this.B_3);
+            this.fichas_rojas.Controls.Add(this.B_5);
+            this.fichas_rojas.Controls.Add(this.B_4);
+            this.fichas_rojas.Location = new System.Drawing.Point(758, 13);
+            this.fichas_rojas.Name = "fichas_rojas";
+            this.fichas_rojas.Size = new System.Drawing.Size(434, 489);
+            this.fichas_rojas.TabIndex = 14;
             // 
             // B_8
             // 
@@ -404,11 +407,13 @@ namespace Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 514);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.fichas_rojas);
+            this.Controls.Add(this.fichas_azules);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fel_Li";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fel_Li";
             this.Load += new System.EventHandler(this.Fel_Li_Load);
             this.panel1.ResumeLayout(false);
@@ -417,8 +422,8 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.fichas_azules.ResumeLayout(false);
+            this.fichas_azules.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.A_6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_8)).EndInit();
@@ -427,8 +432,8 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.A_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.A_4)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.fichas_rojas.ResumeLayout(false);
+            this.fichas_rojas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B_8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_1)).EndInit();
@@ -456,7 +461,7 @@ namespace Presentacion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnReiniciar;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel fichas_azules;
         private System.Windows.Forms.PictureBox A_8;
         private System.Windows.Forms.PictureBox A_1;
         private System.Windows.Forms.PictureBox A_2;
@@ -466,7 +471,7 @@ namespace Presentacion
         private System.Windows.Forms.PictureBox A_3;
         private System.Windows.Forms.PictureBox A_6;
         private System.Windows.Forms.PictureBox A_7;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel fichas_rojas;
         private System.Windows.Forms.PictureBox B_8;
         private System.Windows.Forms.PictureBox B_2;
         private System.Windows.Forms.PictureBox B_1;

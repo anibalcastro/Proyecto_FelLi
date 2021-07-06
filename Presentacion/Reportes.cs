@@ -46,12 +46,12 @@ namespace Presentacion
             reporte1 = nReportes.reporte1(nombre);
             DataTable mov_adyac = new DataTable("mov_adyac");
             DataColumn colum1 = new DataColumn("USUARIO");
-            DataColumn colum2 = new DataColumn("FECHA");
+            
             DataColumn colum3 = new DataColumn("HORA");
             DataColumn colum4 = new DataColumn("CANT ADYACENTES");
 
             mov_adyac.Columns.Add(colum1);
-            mov_adyac.Columns.Add(colum2);
+           
             mov_adyac.Columns.Add(colum3);
             mov_adyac.Columns.Add(colum4);
 
@@ -62,7 +62,6 @@ namespace Presentacion
                     (
                     reporte1[x].nombre,
                     reporte1[x].fecha.Date,
-                    reporte1[x].hora,
                     reporte1[x].mov_Adyacentes
                     );
             }

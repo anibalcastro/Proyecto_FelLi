@@ -44,7 +44,7 @@ namespace Datos
             List<ObjRep1> reporte = new List<ObjRep1>();
             conexion = Conexion.ConexionBD();
             conexion.Open();
-            cmd = new NpgsqlCommand("SELECT nombre_usuario, fecha, hora, mov_adyacentes FROM jugadas " +
+            cmd = new NpgsqlCommand("SELECT nombre_usuario, fecha, mov_adyacentes FROM jugadas " +
                 " WHERE nombre_usuario = '" + nombre + "'" +
                 " AND estado = 'Resuelto' " +
                 " ORDER BY mov_adyacentes ASC " +
@@ -59,8 +59,7 @@ namespace Datos
                     {
                         nombre = dr.GetString(0),
                         fecha = dr.GetDateTime(1),
-                        hora = dr.GetString(2),
-                        mov_Adyacentes = Convert.ToInt32(dr.GetString(3))
+                        mov_Adyacentes = Convert.ToInt32(dr.GetString(2))
                     };
                     reporte.Add(rep1);
                 }

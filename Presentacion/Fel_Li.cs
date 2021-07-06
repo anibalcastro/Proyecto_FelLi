@@ -17,6 +17,8 @@ namespace Presentacion
     {
         Negocio.nFel_Li juego;
 
+        Panel nombre_panel;
+
         PictureBox ficha_seleccionada;
         PictureBox espacio_mover;
 
@@ -105,6 +107,7 @@ namespace Presentacion
         {
             this.Hide();
             MenuPrincipal menu = new MenuPrincipal();
+            menu.nombre(nombre_jugador);
             menu.Show();
         }
 
@@ -112,6 +115,7 @@ namespace Presentacion
         {
             this.Hide();
             MenuPrincipal menu = new MenuPrincipal();
+            menu.nombre(nombre_jugador);
             menu.Show();
         }
 
@@ -150,61 +154,168 @@ namespace Presentacion
         public void obtener_PB_2(Object sender)
         {
             espacio_mover = sender as PictureBox;
-            this.validaciones(ficha_seleccionada, espacio_mover);
+            this.juegoFel_Li(ficha_seleccionada, espacio_mover);
         }
 
+      
 
-        /// <summary>
-        /// VALIDACION QUE NO RETROCEDA
-        /// </summary>
-        /// <param name="seleccionado"></param>
-        /// <param name="cambio"></param>
-        /// <param name="nombre_ficha"></param>
-        /// <returns></returns>
-        public bool validar_NO_retroceder(PictureBox seleccionado, PictureBox cambio, string nombre_ficha)
+        public bool ganador()
         {
-            //NOMBRE DE LOS BOTONES
-            string nombre1 = seleccionado.Name;
-            string nombre2 = cambio.Name;
+            string ficha_roja = "juego.png";
+            string ficha_azul = "ficha-de-poker.png";
+            string ficha_vacio = "vacio.png";
+            bool validar = false;
 
-            //NOMBRE DE LA IMAGEN
-            string nombre_seleccionado = Path.GetFileName(seleccionado.Tag.ToString());
+            // A
+            string pcbA_8 = Path.GetFileName(this.A_8.Tag.ToString());
+            string pcbA_7 = Path.GetFileName(this.A_7.Tag.ToString());
+            string pcbA_6 = Path.GetFileName(this.A_6.Tag.ToString());
+            string pcbA_5 = Path.GetFileName(this.A_5.Tag.ToString());
+            string pcbA_4 = Path.GetFileName(this.A_4.Tag.ToString());
+            string pcbA_3 = Path.GetFileName(this.A_3.Tag.ToString());
+            string pcbA_2 = Path.GetFileName(this.A_2.Tag.ToString());
+            string pcbA_1 = Path.GetFileName(this.A_1.Tag.ToString());
 
-            //VARIABLE A RETORNAR
-            bool validacion = true;
+            // B
+            string pcbB_8 = Path.GetFileName(this.B_8.Tag.ToString());
+            string pcbB_7 = Path.GetFileName(this.B_7.Tag.ToString());
+            string pcbB_6 = Path.GetFileName(this.B_6.Tag.ToString());
+            string pcbB_5 = Path.GetFileName(this.B_5.Tag.ToString());
+            string pcbB_4 = Path.GetFileName(this.B_4.Tag.ToString());
+            string pcbB_3 = Path.GetFileName(this.B_3.Tag.ToString());
+            string pcbB_2 = Path.GetFileName(this.B_2.Tag.ToString());
+            string pcbB_1 = Path.GetFileName(this.B_1.Tag.ToString());
 
-            char separador = '_';
+            //m
+            string pcbm_0 = Path.GetFileName(this.m_0.Tag.ToString());
 
-            string[] valores1 = nombre1.Split(separador);
-            string[] valores2 = nombre2.Split(separador);
 
-            string letra1 = valores1[0];
-            int num1 = Convert.ToInt32(valores1[1]);
 
-            string letra2 = valores2[0];
-            int num2 = Convert.ToInt32(valores2[1]);
-
-            if (letra1.Equals(letra2))
+            if (pcbA_8.Equals(ficha_roja) &&
+                pcbA_7.Equals(ficha_roja) &&
+                pcbA_6.Equals(ficha_roja) &&
+                pcbA_5.Equals(ficha_roja) &&
+                pcbA_4.Equals(ficha_roja) &&
+                pcbA_3.Equals(ficha_roja) &&
+                pcbA_2.Equals(ficha_roja) &&
+                pcbA_1.Equals(ficha_roja))
             {
-                if (num1 < num2)
+                if (pcbB_8.Equals(ficha_azul) &&
+                    pcbB_7.Equals(ficha_azul) &&
+                    pcbB_6.Equals(ficha_azul) &&
+                    pcbB_5.Equals(ficha_azul) &&
+                    pcbB_4.Equals(ficha_azul) &&
+                    pcbB_3.Equals(ficha_azul) &&
+                    pcbB_2.Equals(ficha_azul) &&
+                    pcbB_1.Equals(ficha_azul))
                 {
-                    validacion = false;
+                    if (pcbm_0.Equals(ficha_vacio))
+                    {
+                        FelLi = new ObjFelLi
+                        {
+                            nombre_jugador = nombre_jugador,
+                            fecha = fecha_hora,
+                            mov_adyacente = movimientos_adyacentes,
+                            cant_saltos = saltos,
+                            estado = "Resuelto"
+                        };
+                        juego.insertarDatos(FelLi);
+                        MessageBox.Show("Felicidades juego resuelto", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.imagenes_botones();
+                        this.movimientos_adyacentes = 0;
+                        this.saltos = 0;
+                        this.ultimo_cambio = "";
+                        this.ficha_seleccionada = null;
+                        this.espacio_mover = null;
+                        this.mostarDatos();
+
+                        validar = true;
+                    }
                 }
+                
             }
-            else if (letra1 != letra2)
+            else
             {
-                if (ultimo_cambio.Equals(nombre2) && nombre_seleccionado == nombre_ficha)
+                validar = false;
+            }
+            return validar;
+        }
+
+        public void juegoFel_Li(PictureBox seleccionado, PictureBox cambio)
+        {
+            string nombreImagenCambio = Path.GetFileName(cambio.Tag.ToString());
+            string nombreImagenSeleccionado = Path.GetFileName(seleccionado.Tag.ToString());
+
+            string selec = seleccionado.Name;
+            string camb = cambio.Name;
+
+            Image imagen_seleccionado = seleccionado.Image;
+            Image imagen_cambio = cambio.Image;
+
+            string nombre_vacio = ("vacio.png");
+
+            bool ganador = this.ganador();
+            bool validarAdyacente = juego.validarAdyacente(selec, camb, nombreImagenSeleccionado);
+            bool validarSalto = juego.validarSalto(selec, camb, nombreImagenSeleccionado);
+
+            if (ganador == false)
+            {
+                if (nombreImagenCambio.Equals(nombre_vacio))
                 {
-                    validacion = false;
+                   if (validarAdyacente)
+                    {
+                        nombre_ficha = Path.GetFileName(seleccionado.Tag.ToString());
+
+                        cambio.Image = imagen_seleccionado;
+                        cambio.Tag = seleccionado.Tag;
+
+                        seleccionado.Image = imagen_cambio;
+                        seleccionado.Tag = (@"C:\Users\admin\source\repos\Proyecto_FelLi\Presentacion\Resources\vacio.png");
+
+                        ficha_seleccionada = null;
+                        espacio_mover = null;
+
+                        ultimo_cambio = seleccionado.Name;
+
+                        movimientos_adyacentes = movimientos_adyacentes + 1;
+                        this.mostarDatos();
+
+                    }
+                   else if (validarSalto)
+                    {
+                        nombre_ficha = Path.GetFileName(seleccionado.Tag.ToString());
+
+                        cambio.Image = imagen_seleccionado;
+                        cambio.Tag = seleccionado.Tag;
+
+                        seleccionado.Image = imagen_cambio;
+                        seleccionado.Tag = (@"C:\Users\admin\source\repos\Proyecto_FelLi\Presentacion\Resources\vacio.png");
+
+                        ficha_seleccionada = null;
+                        espacio_mover = null;
+
+                        ultimo_cambio = seleccionado.Name;
+
+                        saltos = saltos + 1;
+                        this.mostarDatos();
+                    }
+                   
+                }
+                else
+                {
+                    MessageBox.Show("ERROR EN LAS FICHAS SELECCIONADAS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ficha_seleccionada = null;
+                    espacio_mover = null;
+
+                    this.mostarDatos();
                 }
             }
             else
             {
-                validacion = true;
+                MessageBox.Show("Felicidades Ganaste", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            return validacion;
-
+            
 
         }
 
@@ -217,6 +328,8 @@ namespace Presentacion
         {
             string nombreImagenCambio = Path.GetFileName(cambio.Tag.ToString());
 
+            
+
             string selec = seleccionado.Name;
             string camb = cambio.Name;
 
@@ -227,8 +340,8 @@ namespace Presentacion
 
             if (nombreImagenCambio.Equals(nombre_vacio))
             {
-                if (this.validar_NO_retroceder(seleccionado, cambio, nombre_ficha))
-                {
+               // if (this.validar_NO_retroceder(seleccionado, cambio, nombre_ficha))
+               // {
                     nombre_ficha = Path.GetFileName(seleccionado.Tag.ToString());
 
                     cambio.Image = imagen_seleccionado;
@@ -245,7 +358,7 @@ namespace Presentacion
                     if (juego.validarMovimientoAdyacente(selec, camb))
                     {
                         movimientos_adyacentes = movimientos_adyacentes + 1;
-                        txtAdyacente.Text = Convert.ToString(movimientos_adyacentes);
+                        this.mostarDatos();
                     }
 
                     else
@@ -253,13 +366,13 @@ namespace Presentacion
                         if (juego.validarMovimientoSalto(selec, camb))
                         {
                             saltos = saltos + 1;
-                            txtSaltos.Text = Convert.ToString(saltos);
+                            this.mostarDatos();
                         }
                     }
 
 
 
-                }
+               // }
             }
             else
             {
@@ -267,13 +380,17 @@ namespace Presentacion
                 ficha_seleccionada = null;
                 espacio_mover = null;
 
-                txtAdyacente.Text = Convert.ToString(movimientos_adyacentes);
-                txtSaltos.Text = Convert.ToString(saltos);
+                this.mostarDatos();
 
             }
 
         }
 
+        /// <summary>
+        /// Reiniciar juego 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             FelLi = new ObjFelLi
@@ -286,6 +403,28 @@ namespace Presentacion
             };
             juego.insertarDatos(FelLi);
             MessageBox.Show("Juego Reinciado", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.imagenes_botones();
+            this.movimientos_adyacentes = 0;
+            this.saltos = 0;
+            this.ultimo_cambio = "";
+            this.ficha_seleccionada = null;
+            this.espacio_mover = null;
+            this.mostarDatos();
         }
+
+        /// <summary>
+        /// Mostrar los datos del juego
+        /// movimientos adyacentes
+        /// movimientos con salto
+        /// nombre del jugador
+        /// </summary>
+        public void mostarDatos()
+        {
+            txtJugador.Text = this.nombre_jugador;
+            this.txtAdyacente.Text = Convert.ToString(this.movimientos_adyacentes);
+            this.txtSaltos.Text = Convert.ToString(this.saltos);
+        }
+
+      
     }
 }
