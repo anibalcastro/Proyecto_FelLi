@@ -25,10 +25,18 @@ namespace Presentacion
             logica = new nMenuPrincipal();
         }
 
+        /// <summary>
+        /// Obtener el nombre que se ingresó
+        /// </summary>
+        /// <param name="nombre"></param>
         public void nombre(string nombre)
         {
             this.txtJugador.Text = nombre;
         }
+       
+        /// <summary>
+       /// Hacer el grafico de pastel
+       /// </summary>
         public void graficoPastel()
         {
             String[] serie = { "Resuelto", "Reinicio" };
@@ -47,6 +55,9 @@ namespace Presentacion
             }
         }
 
+        /// <summary>
+        /// Chart de top 3
+        /// </summary>
         public void top3()
         {
             String[] serie = logica.usuarios().ToArray();
@@ -65,6 +76,9 @@ namespace Presentacion
             }
         }
 
+        /// <summary>
+        /// Juego resuelto con menos movimientos adyacentes
+        /// </summary>
         public void juegoResueltoMenos()
         {
             String[] serie = logica.consultar_id().ToArray();
@@ -83,6 +97,11 @@ namespace Presentacion
             }
         }
         
+        /// <summary>
+        /// Se dirige al formulario como jugar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnComoJugar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -91,6 +110,11 @@ namespace Presentacion
 
         }
 
+        /// <summary>
+        /// Se dirige al formulario como jugar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pbComoJugar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -98,6 +122,11 @@ namespace Presentacion
             informacion.Show();
         }
 
+        /// <summary>
+        /// Se dirige al formulario del juego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnJugar_Click(object sender, EventArgs e)
         {
             if (this.validarNombre())
@@ -110,6 +139,11 @@ namespace Presentacion
             }
         }
 
+        /// <summary>
+        ///  Se dirige al formulario del juego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pbJugar_Click(object sender, EventArgs e)
         {
            
@@ -126,6 +160,11 @@ namespace Presentacion
             
         }
 
+        /// <summary>
+        /// Se dirige al formulario de reportes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReportes_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -134,6 +173,11 @@ namespace Presentacion
 
         }
 
+        /// <summary>
+        /// Se dirige al formulario de reportes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pbReportes_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -141,16 +185,31 @@ namespace Presentacion
             reportes.Show();
         }
 
+
+        /// <summary>
+        /// Se sale de la app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Se sale de la app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pbSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Validacion si el nombre existe en la base de datosS
+        /// </summary>
+        /// <returns></returns>
         public bool validarNombre()
         {
             nombre_jugador = txtJugador.Text;
@@ -171,6 +230,11 @@ namespace Presentacion
 
         }
 
+        /// <summary>
+        /// Cuando cargue el formulario que cargue los graficos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.graficoPastel();

@@ -41,7 +41,7 @@ namespace Presentacion
         }
 
         /// <summary>
-        /// Obtener el nombre dl jugador
+        /// Obtener el nombre del jugador
         /// </summary>
         /// <param name="nombre"></param>
         public void nombre(string nombre)
@@ -49,14 +49,17 @@ namespace Presentacion
             nombre_jugador = nombre;
         }
 
+        /// <summary>
+        /// Obtener la fecha y hora apenas inicia el juego
+        /// </summary>
+        /// <param name="fecha"></param>
         public void fecha(DateTime fecha)
         {
             fecha_hora = fecha;
         }
-
         
         /// <summary>
-        /// Agregar las imagenes a los picture box
+        /// Agregar las imagenes a los picturebox
         /// </summary>
         public void imagenes_botones()
         {
@@ -100,9 +103,12 @@ namespace Presentacion
             B_8.Image = Image.FromFile(@"C:\Users\admin\source\repos\Proyecto_FelLi\Presentacion\Resources\juego.png");
             B_8.Tag = (@"C:\Users\admin\source\repos\Proyecto_FelLi\Presentacion\Resources\juego.png");
         }
-        
 
-
+        /// <summary>
+        /// Regresar al menu principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -110,7 +116,12 @@ namespace Presentacion
             menu.nombre(nombre_jugador);
             menu.Show();
         }
-
+       
+        /// <summary>
+        /// Regresar al menu principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -118,13 +129,26 @@ namespace Presentacion
             menu.nombre(nombre_jugador);
             menu.Show();
         }
-
+       
+        /// <summary>
+        /// A la hora de cargar la informacion que 
+        /// se cargue las imagenes, los puntajes y 
+        /// el nombre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Fel_Li_Load(object sender, EventArgs e)
         {
            this.imagenes_botones();
+            this.mostarDatos();
 
         }
-
+       
+        /// <summary>
+        /// Obtener los picturebox seleccionados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ObtenerPB(object sender, MouseEventArgs e)
         {
             if (ficha_seleccionada == null)
@@ -158,7 +182,10 @@ namespace Presentacion
         }
 
       
-
+        /// <summary>
+        /// Validacion si ganó
+        /// </summary>
+        /// <returns></returns>
         public bool ganador()
         {
             string ficha_roja = "juego.png";
@@ -241,6 +268,11 @@ namespace Presentacion
             return validar;
         }
 
+        /// <summary>
+        /// Contiene todas las validaciones del juego
+        /// </summary>
+        /// <param name="seleccionado"></param>
+        /// <param name="cambio"></param>
         public void juegoFel_Li(PictureBox seleccionado, PictureBox cambio)
         {
             string nombreImagenCambio = Path.GetFileName(cambio.Tag.ToString());
@@ -299,6 +331,14 @@ namespace Presentacion
                         saltos = saltos + 1;
                         this.mostarDatos();
                     }
+                   else if (validarAdyacente == false && validarSalto == false)
+                    {
+                        MessageBox.Show("Movimiento invalido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ficha_seleccionada = null;
+                        espacio_mover = null;
+
+                        this.mostarDatos();
+                    }
                    
                 }
                 else
@@ -310,79 +350,9 @@ namespace Presentacion
                     this.mostarDatos();
                 }
             }
-            else
-            {
-                MessageBox.Show("Felicidades Ganaste", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+           
 
             
-
-        }
-
-        /// <summary>
-        /// Contiene todas las validaciones del juego
-        /// </summary>
-        /// <param name="seleccionado"></param>
-        /// <param name="cambio"></param>
-        public void validaciones(PictureBox seleccionado, PictureBox cambio)
-        {
-            string nombreImagenCambio = Path.GetFileName(cambio.Tag.ToString());
-
-            
-
-            string selec = seleccionado.Name;
-            string camb = cambio.Name;
-
-            Image imagen_seleccionado = seleccionado.Image;
-            Image imagen_cambio = cambio.Image;
-
-            string nombre_vacio = ("vacio.png");
-
-            if (nombreImagenCambio.Equals(nombre_vacio))
-            {
-               // if (this.validar_NO_retroceder(seleccionado, cambio, nombre_ficha))
-               // {
-                    nombre_ficha = Path.GetFileName(seleccionado.Tag.ToString());
-
-                    cambio.Image = imagen_seleccionado;
-                    cambio.Tag = seleccionado.Tag;
-
-                    seleccionado.Image = imagen_cambio;
-                    seleccionado.Tag = (@"C:\Users\admin\source\repos\Proyecto_FelLi\Presentacion\Resources\vacio.png");
-
-                    ficha_seleccionada = null;
-                    espacio_mover = null;
-
-                    ultimo_cambio = seleccionado.Name;
-
-                    if (juego.validarMovimientoAdyacente(selec, camb))
-                    {
-                        movimientos_adyacentes = movimientos_adyacentes + 1;
-                        this.mostarDatos();
-                    }
-
-                    else
-                    {
-                        if (juego.validarMovimientoSalto(selec, camb))
-                        {
-                            saltos = saltos + 1;
-                            this.mostarDatos();
-                        }
-                    }
-
-
-
-               // }
-            }
-            else
-            {
-                MessageBox.Show("ERROR EN LAS FICHAS SELECCIONADAS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ficha_seleccionada = null;
-                espacio_mover = null;
-
-                this.mostarDatos();
-
-            }
 
         }
 
@@ -424,7 +394,33 @@ namespace Presentacion
             this.txtAdyacente.Text = Convert.ToString(this.movimientos_adyacentes);
             this.txtSaltos.Text = Convert.ToString(this.saltos);
         }
+        
+        /// <summary>
+        /// Validar si ganó
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool validar = this.ganador();
+            if (validar == false)
+            {
+                MessageBox.Show("El juego no se ha resuelto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-      
+        /// <summary>
+        /// Validar si ganó
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            bool validar = this.ganador();
+            if (validar == false)
+            {
+                MessageBox.Show("El juego no se ha resuelto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -28,6 +28,9 @@ namespace Presentacion
             this.dt_reportes.AllowUserToAddRows = false;
         }
 
+        /// <summary>
+        /// Llenar combobox de todos los usuarios 
+        /// </summary>
         public void llenar_cbUsuario()
         {
             usuarios = nReportes.cb_llenar();
@@ -38,6 +41,10 @@ namespace Presentacion
 
         }
 
+        /// <summary>
+        /// Darle formato al reporte 1
+        /// </summary>
+        /// <param name="nombre"></param>
         public void dt_rep1(string nombre)
         {
 
@@ -69,6 +76,9 @@ namespace Presentacion
             dt_reportes.DataSource = mov_adyac;
         }
 
+        /// <summary>
+        /// Darle formato al reporte 2
+        /// </summary>
         public void dt_rep2()
         {
             //dt_reportes.Rows.Clear();
@@ -98,6 +108,10 @@ namespace Presentacion
             dt_reportes.DataSource = table;
         }
 
+        /// <summary>
+        /// Darle formato al reporte 3
+        /// </summary>
+        /// <param name="nombre"></param>
         public void dt_rep3(string nombre)
         {
             //dt_reportes.Rows.Clear();
@@ -127,6 +141,12 @@ namespace Presentacion
             dt_reportes.DataSource = table;
         }
 
+        /// <summary>
+        /// Al cargar que se active el reporte 2 
+        /// cargue el combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Reportes_Load(object sender, EventArgs e)
         {
             this.rbRep2.Checked = true;
@@ -136,6 +156,12 @@ namespace Presentacion
             this.dt_rep2();
         }
 
+        /// <summary>
+        /// Validar que cuando el radiobutton rep1 este activo que habilite 
+        /// el groupbox y ejecute el dt_rep1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbRep1_CheckedChanged(object sender, EventArgs e)
         {
             this.groupBox1.Enabled = true;
@@ -143,11 +169,18 @@ namespace Presentacion
             this.dt_rep1(usuario);
         }
 
+        /// <summary>
+        /// Deshabilitar el groupbox
+        /// porque no se necesita
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbRep2_CheckedChanged(object sender, EventArgs e)
         {
             this.groupBox1.Enabled = false;
             this.dt_rep2();
         }
+
 
         private void rbRep3_CheckedChanged(object sender, EventArgs e)
         {
@@ -156,12 +189,21 @@ namespace Presentacion
             this.dt_rep3(usuario);
         }
 
+        /// <summary>
+        /// Al ser selccionado alguno, ejecute la accion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             string usuario = this.cbUsuarios.SelectedValue.ToString();
             this.validarSeleccion(usuario);
         }
 
+        /// <summary>
+        /// Validar cual radiobuttom fue seleccionado
+        /// </summary>
+        /// <param name="nombre"></param>
         public void validarSeleccion(string nombre)
         {
             if (this.rbRep1.Checked == true && this.rbRep2.Checked == false && this.rbRep3.Checked == false)
@@ -175,6 +217,11 @@ namespace Presentacion
 
         }
 
+        /// <summary>
+        /// Regresar  al menu principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -182,6 +229,11 @@ namespace Presentacion
             principal.Show();
         }
 
+        /// <summary>
+        /// Regresar al menu principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();

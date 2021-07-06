@@ -10,6 +10,7 @@ namespace Negocio
 {
     public class nFel_Li
     {
+        
         List<ObjSaltos> saltos = new List<ObjSaltos>();
         List<ObjAdyacente> adyacente = new List<ObjAdyacente>();
         List<string> panel_fichas_azules = new List<string>{ "A_8", "A_7", "A_6", "A_5", "A_4", "A_3", "A_2", "A_1" };
@@ -19,37 +20,25 @@ namespace Negocio
 
         Datos.DBFel_Li fel_Li;
 
+        /// <summary>
+        /// Se llenan las listas que viene de base de datos
+        /// </summary>
         public nFel_Li()
         {
             adyacente = new Datos.DBFel_Li().llenarListaAdyacente1();
             saltos = new Datos.DBFel_Li().llenarListaSaltos();
         }
 
-        public bool validarMovimientoAdyacente(string seleccion, string cambio)
-        {
-            bool validar = false;
-            for (int x = 0; x < adyacente.Count; x++)
-            {
-                if (adyacente[x].nombre.Equals(seleccion))
-                {
-                    if (adyacente[x].mov1.Equals(cambio) ||
-                        adyacente[x].mov_2.Equals(cambio) ||
-                        adyacente[x].mov_3.Equals(cambio) ||
-                        adyacente[x].mov_4.Equals(cambio))
-                    {
-                        validar = true;
-                        break;
-                    }
-                    else
-                    {
-                        validar = false;
-                        break;
-                    }
-                }
-            }
-            return validar;
-        }
-
+        /// <summary>
+        /// Validaciones si el movimiento fue adyacente
+        /// por medio de la seleccion de la ficha
+        /// el cambio de la ficha
+        /// y la imagen
+        /// </summary>
+        /// <param name="seleccion"></param>
+        /// <param name="cambio"></param>
+        /// <param name="imagen"></param>
+        /// <returns></returns>
         public bool validarAdyacente(string seleccion, string cambio, string imagen)
         {
             bool valido = false;
@@ -162,6 +151,13 @@ namespace Negocio
             return valido;
         }
 
+        /// <summary>
+        /// Validaciones si el movimiento fue con salto
+        /// </summary>
+        /// <param name="seleccion"></param>
+        /// <param name="cambio"></param>
+        /// <param name="imagen"></param>
+        /// <returns></returns>
         public bool validarSalto(string seleccion, string cambio, string imagen)
         {
             bool valido = false;
@@ -280,37 +276,11 @@ namespace Negocio
             return valido;
         }
         
-
-
-
-
-
-        public bool validarMovimientoSalto(string seleccion, string cambio)
-        {
-            bool validar = false;
-
-            for (int x = 0; x < saltos.Count; x++)
-            {
-                if (saltos[x].nombre.Equals(seleccion))
-                {
-                    if (saltos[x].salto1.Equals(cambio) ||
-                        saltos[x].salto2.Equals(cambio) ||
-                        saltos[x].salto3.Equals(cambio) ||
-                        saltos[x].salto4.Equals(cambio))
-                    {
-                        validar = true;
-                        break;
-                    }
-                    else
-                    {
-                        validar = false;
-                        break;
-                    }
-                }
-            }
-            return validar;
-        }
-
+        /// <summary>
+        /// Insertar datos a la base de datos, ya sea si el juego se reinicio
+        /// o si el juego  se resolvio.
+        /// </summary>
+        /// <param name="objFelLi"></param>
         public void insertarDatos(ObjFelLi objFelLi)
         {
             new Datos.DBFel_Li().Insertar(objFelLi);
